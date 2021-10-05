@@ -83,9 +83,9 @@ void main( void ) {
 	  float size = (10.+ sizeCoeff * 40.)*pixelSize;
 	  
 	  vec2 position = vec2(random(vec2(i)) - mod(u_time/10., 0.5), random(vec2(i+5)));
-	  
-	  color += drawRect(st, vec2(position.x*aspect, position.y), size, size, pixelSize, vec3(1.), -vec3(1.0, 1.0, 1.0));
-	  
+	  float positionX = fract(position.x) * 2.;
+    // pos.x = fract(velX*rnd+index)*2.-1.0;
+	  color += drawRect(st, vec2(positionX*aspect, position.y), size, size, pixelSize, vec3(1.), -vec3(1.0, 1.0, 1.0));
 	}
 
 	
